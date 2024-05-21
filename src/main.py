@@ -1,10 +1,13 @@
+from inline_markdown import split_nodes_images
 from textnode import TextNode, TextType
 
 
 def main():
-    node = TextNode("This is a text node", TextType.BOLD,
-                    "https://www.boot.dev")
-    print(node)
+    node = TextNode(
+        "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and another ![second image](https://i.imgur.com/3elNhQu.png)",
+        TextType.TEXT,
+    )
+    new_nodes = split_nodes_images([node])
 
 
 main()
