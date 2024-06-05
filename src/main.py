@@ -1,18 +1,9 @@
-from inline_markdown import split_nodes_images
-from markdown_blocks import markdown_to_blocks
+from copyall import copy_all
+from generate_page import generate_page_recursive
 
 
 def main():
-    text = """ 
-This is **bolded** paragraph
-
-This is another paragraph with *italic* text and `code` here
-This is the same paragraph on a new line
-
-* This is a list
-* with items
-"""
-    new_nodes = markdown_to_blocks(text)
-
+    copy_all()
+    generate_page_recursive("content","template.html","public")
 
 main()
